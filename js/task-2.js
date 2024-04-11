@@ -1,28 +1,20 @@
 'use strict';
 
-class Storage{
-  #items;
+const listGallery = document.querySelector(".gallery");
 
-  constructor(items) {
-    this.#items = items;
-  }
+const listGalleryItemFirst = document.createElement("li");
+const listGalleryImageFirst = document.createElement("img");
+listGalleryImageFirst.src = "<https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260>";
+listGalleryImageFirst.alt = "White and Black Long Fur Cat";
 
-  getItems() {
-    return this.#items;
-  }
+const listGalleryItemSecond = document.createElement("li");
+const listGalleryImageSecond = document.createElement("img");
+listGalleryImageSecond.src = "<https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260>";
+listGalleryImageSecond.alt = "Orange and White Koi Fish Near Yellow Koi Fish";
 
-  addItem(newItem) {
-    this.#items.push(newItem);
-  }
+const listGalleryItemThird = document.createElement("li");
+const listGalleryImageThird = document.createElement("img");
+listGalleryImageThird.src = "<https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260>";
+listGalleryImageThird.alt = "Group of Horses Running";
 
-  removeItem(itemToRemove) {
-    this.#items = this.#items.filter(item => item != itemToRemove);
-  }
-}
-
-const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-storage.addItem("Droid");
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-storage.removeItem("Prolonger");
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+listGallery.prepend(listGalleryImageFirst, listGalleryImageSecond, listGalleryImageThird);
